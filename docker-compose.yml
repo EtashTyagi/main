@@ -20,10 +20,13 @@ services:
       - /etc/timezone:/etc/timezone:ro
   web:
     build:  ./main_backend
+    container_name: main_web
     command: "java -jar /webapp.jar"
     restart: unless-stopped
     volumes:
       - ./build:/src
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     depends_on:
       - db
       - frontend_build
