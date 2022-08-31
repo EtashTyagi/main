@@ -11,7 +11,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
   web:
-    build:  .
+    build:  main_backend
     container_name: main_web
     command: "java -jar /app.jar"
     restart: unless-stopped
