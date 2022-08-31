@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:4.4
+    container_name: main_mongo
+    restart: unless-stopped
+    volumes:
+      - ./mongo/data:/data/db
+      - ./mongo/config:/data/configdb
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+  frontend_build:
+    container_name: main_frontend_build
+    build: ./main_frontend
+    restart: unless-stopped
+    volumes:
+      - ./build/src/main/resources/static:/app/build
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+  web:
+    build:  ./main_backend
+    command: "java -jar /webapp.jar"
+    restart: unless-stopped
+    volumes:
+      - ./build:/src
+    depends_on:
+      - db
+      - frontend_build
