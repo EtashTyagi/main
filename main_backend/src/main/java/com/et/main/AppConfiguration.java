@@ -11,10 +11,10 @@ public class AppConfiguration implements WebMvcConfigurer {
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.addPathPrefix("/api", (clazz)->true);
     }
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("https://etashtyagi.tk")
-                .allowCredentials(true).maxAge(3600);
-    }
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**")
+//                .allowedOrigins("https://etashtyagi.tk")
+//                .allowCredentials(true).maxAge(3600);
+//    }
 }
