@@ -5,9 +5,9 @@ RUN npm i
 RUN npm run build
 
 FROM openjdk:11
-COPY ../main_backend /main
+COPY . /main
 WORKDIR /main
 COPY --from=frontend_builder /app/build ./src/main/resources/static/
-RUN ./mvnw package
+RUN ./mvnw package -Pprod
 ARG JAR_FILE=./target/*.jar
 RUN cp ${JAR_FILE} /app.jar
