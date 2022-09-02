@@ -1,5 +1,5 @@
 import {Box, CSSObject, Stack, styled, SwipeableDrawer, Theme} from "@mui/material";
-import {aboveSmallScreen, mediumScreen, SIDEBAR_WIDTH, smallScreen} from "../../themes/constants";
+import {SIDEBAR_WIDTH, smallScreen} from "../../themes/constants";
 
 
 const openedStyle = (theme: Theme): CSSObject => ({

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import StyledDrawer, {StyledDrawerBody, StyledDrawerHeader} from "./style";
 import Close from "@mui/icons-material/Close";
-import {Divider, IconButton, useMediaQuery, useScrollTrigger, useTheme} from "@mui/material";
+import {Divider, IconButton, useMediaQuery, useTheme} from "@mui/material";
 import {largeScreen, mediumScreen, smallScreen} from "../../themes/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store";
@@ -9,7 +9,6 @@ import {setSideMenuOpen} from "./sideMenuSlice";
 import Brand from "../Brand";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBarTreeView from "./SideBarTreeView";
-import {Router} from "react-router-dom";
 
 const SideMenu = () => {
     const dispatch = useDispatch()

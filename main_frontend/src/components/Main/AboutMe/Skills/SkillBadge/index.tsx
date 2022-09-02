@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {Button, CardProps, Divider, Rating, Stack, Typography, useMediaQuery, useTheme} from "@mui/material";
 import {SkillTitleTypography, StyledSkillBadgeWrapper} from "./style";
 import {

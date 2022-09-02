@@ -1,6 +1,5 @@
 import React from 'react';
 import StyledMainBox from "./style";
-import { Toolbar} from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import routeToComponent from "./routeToComponent";
 import {isExpandable} from "../../constants/routes";

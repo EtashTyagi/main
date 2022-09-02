@@ -29,7 +29,7 @@ const Header = () => {
         () => {
             getLikeStatus(dispatch)
         }
-        , [])
+        , [dispatch])
 
     const toggleSidebar = () => {
         dispatch(setSideMenuOpen(!isSidebarOpen))

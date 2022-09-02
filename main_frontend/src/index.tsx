@@ -6,7 +6,7 @@ import App from './App';
 import {Provider, useSelector} from "react-redux";
 import store, {RootState} from "./store"
 import themes from "./themes";
-import {GlobalStyles, Theme, useScrollTrigger} from "@mui/material";
+import {GlobalStyles, Theme} from "@mui/material";
 import {createStyles} from "@mui/material/styles";
 import {BrowserRouter} from "react-router-dom";
 

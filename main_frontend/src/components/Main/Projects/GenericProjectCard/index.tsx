@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardProps, Chip, Divider, Grid, Paper, Stack, Typography, useMediaQuery, useTheme} from "@mui/material";
+import {Card, CardProps, Chip, Grid, Paper, Stack, Typography, useMediaQuery, useTheme} from "@mui/material";
 import {IProject} from "../../../../constants/Projects";
 import {smallScreen} from "../../../../themes/constants";
 import SkillAndProjectTagChip from "../../../SkillAndProjectTagChip";
