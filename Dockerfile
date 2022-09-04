@@ -1,7 +1,7 @@
 FROM node:16.17.0-alpine as frontend_builder
 COPY ./main_frontend /app
 WORKDIR /app
-RUN npm i
+RUN npm install --force
 RUN npm run build
 
 FROM openjdk:11
