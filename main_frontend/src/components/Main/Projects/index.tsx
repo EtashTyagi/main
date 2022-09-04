@@ -23,12 +23,18 @@ const Projects = () => {
                         </Typography>
                         <Filter/>
                         <Divider/>
-                        <Grid spacing={2} container justifyContent={"space-evenly"} alignItems={"center"}>
+                        <Grid spacing={2} container justifyContent={"space-evenly"} alignItems={"center"} pr={4}>
                             {
                                 projectDetails.map(
                                     (e) => (
                                         <Grid key={e.title} item>
-                                            <GenericProjectCard project={e} elevation={4} sx={{borderRadius: 2}}/>
+                                            <GenericProjectCard project={e}
+                                                                elevation={4}
+                                                                sx={{
+                                                                    borderRadius: 2,
+                                                                    maxWidth: `calc(100vw - ${theme.spacing(4)})`
+                                                                }}
+                                            />
                                         </Grid>
                                     )
                                 )

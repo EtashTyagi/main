@@ -11,7 +11,7 @@ const getStoredTheme = (): AppThemes => {
     let storedTheme = localStorage.getItem(Keys.THEME)
     return storedTheme && Object.keys(AppThemes).includes(storedTheme) ?
         storedTheme as AppThemes
-        : AppThemes.DARK
+        : AppThemes.LIGHT
 }
 
 const themeSlice = createSlice({

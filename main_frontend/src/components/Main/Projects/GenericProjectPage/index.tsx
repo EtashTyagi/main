@@ -114,7 +114,7 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
                         {
                             project.tags.map(
                                 (e) => (
-                                    <Grid item>
+                                    <Grid key={e} item>
                                         <SkillAndProjectTagChip tagName={e} key={e}/>
                                     </Grid>
                                 )

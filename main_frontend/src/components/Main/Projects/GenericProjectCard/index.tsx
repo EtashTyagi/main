@@ -11,7 +11,6 @@ export interface IGenericProjectCardProps extends CardProps {
     project: IProject
 }
 const CARD_WIDTH = 400
-const CARD_MIN_HEIGHT = CARD_WIDTH/1.618
 
 const GenericProjectCard = (props: IGenericProjectCardProps) => {
     const {project, ...cardProps} = props
@@ -20,7 +19,7 @@ const GenericProjectCard = (props: IGenericProjectCardProps) => {
     const isSmallScreen = useMediaQuery(smallScreen(theme))
 
     return (
-        <Card {...cardProps} sx={{...cardProps.sx, width: CARD_WIDTH, cursor: "pointer", minHeight: CARD_MIN_HEIGHT}}
+        <Card {...cardProps} sx={{...cardProps.sx, width: CARD_WIDTH, cursor: "pointer"}}
               onClick={() => {navigate(PROJECTS_ROUTE+"/"+project.slug)}}>
             <Stack>
                 <Paper component={"img"} elevation={0}
@@ -45,14 +44,14 @@ const GenericProjectCard = (props: IGenericProjectCardProps) => {
                         project.tags.map(
                             (e) => (
                                 MyCombinedRatings[e] ?
-                                <Grid item>
-                                    <SkillAndProjectTagChip tagName={e} key={e} size={"small"}/>
-                                </Grid> : <></>
+                                <Grid key={e} item>
+                                    <SkillAndProjectTagChip tagName={e} size={"small"}/>
+                                </Grid> : <Stack key={e} position={"absolute"}></Stack>
                             )
                         )
                     }
                 </Grid>
-                <Typography variant={"subtitle1"} py={1} px={1} textAlign={"center"}>
+                <Typography variant={"subtitle1"} pt={0.5} pb={1} px={1} textAlign={"center"}>
                     {project.shortDesc}
                 </Typography>
             </Stack>

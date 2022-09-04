@@ -133,7 +133,10 @@ const Header = () => {
                                                         toggleMenuOpen={toggleMenuOpen}
                                                         toggleGlobalTheme={toggleGlobalTheme}
                                                         selectedTheme={selectedTheme}
-                                                        anchor={menuAnchor.current}/>}
+                                                        anchor={menuAnchor.current}
+                                                        likes={latestLikeResponse.totalLikes}
+                                                        toggleLikes={toggleLike}
+            />}
         </Box>
     );
 };
@@ -143,11 +146,13 @@ interface IHeaderMenuProps {
     toggleMenuOpen: () => void,
     toggleGlobalTheme: () => void,
     selectedTheme: AppThemes,
+    likes: number,
+    toggleLikes: () => void,
     anchor?: HTMLElement,
 }
 
 const HeaderMenu = (props: IHeaderMenuProps) => {
-    const {isMenuOpen, toggleMenuOpen, anchor, selectedTheme, toggleGlobalTheme} = props
+    const {isMenuOpen, toggleMenuOpen, anchor, selectedTheme, toggleGlobalTheme, toggleLikes, likes} = props
     return (
         <Menu
             anchorEl={anchor}
@@ -173,9 +178,11 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
             <MenuItem>
                 <IconButton
                     size="large"
-                    aria-label="17 likes"
-                    color="inherit">
-                    <Badge badgeContent={17} color="error">
+                    aria-label={`${likes} likes`}
+                    color="inherit"
+                    onClick={toggleLikes}
+                >
+                    <Badge badgeContent={likes} color="error">
                         <Favorite />
                     </Badge>
                 </IconButton>

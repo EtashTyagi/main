@@ -17,7 +17,6 @@ const Filter = () => {
                     getOptionLabel={(option) => (option)}
                     defaultValue={[...Object.values(LanguageTags)]}
                     filterSelectedOptions
-                    ChipProps={{color: "error"}}
                     renderInput={(params) => (
                         <TextField
                             {...params}
@@ -33,7 +32,6 @@ const Filter = () => {
                     getOptionLabel={(option) => (option)}
                     defaultValue={[...Object.values(ToolsTags)]}
                     filterSelectedOptions
-                    ChipProps={{color: "error"}}
                     renderInput={(params) => (
                         <TextField
                             {...params}
@@ -51,7 +49,6 @@ const Filter = () => {
                     getOptionLabel={(option) => (option)}
                     defaultValue={[...Object.values(FrameworkTags)]}
                     filterSelectedOptions
-                    ChipProps={{color: "error"}}
                     renderInput={(params) => (
                         <TextField
                             {...params}
@@ -67,7 +64,6 @@ const Filter = () => {
                     getOptionLabel={(option) => (option)}
                     defaultValue={[...Object.values(ProjectStatus)]}
                     filterSelectedOptions
-                    ChipProps={{color: "error"}}
                     renderInput={(params) => (
                         <TextField
                             {...params}
