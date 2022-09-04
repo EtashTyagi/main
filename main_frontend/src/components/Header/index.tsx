@@ -175,12 +175,11 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
                 </IconButton>
                 <p>Message Me</p>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={toggleLikes}>
                 <IconButton
                     size="large"
                     aria-label={`${likes} likes`}
                     color="inherit"
-                    onClick={toggleLikes}
                 >
                     <Badge badgeContent={likes} color="error">
                         <Favorite />
