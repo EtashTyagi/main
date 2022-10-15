@@ -9,25 +9,26 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
+@RequestMapping("${apiPrefix}/like")
 public class LikeController {
-    private final LikeService likeService;
+    private final LikeService service;
 
     @Autowired
     public LikeController(LikeService likeService) {
-        this.likeService = likeService;
+        this.service = likeService;
     }
 
-    @GetMapping(value = "/like")
+    @GetMapping
     public ResponseEntity<LikeResponse> getLikes(HttpServletRequest request) {
-        return ResponseEntity.ok(likeService.getLikeInfo(request.getSession().getId()));
+        return ResponseEntity.ok(service.getLikeInfo(request.getSession().getId()));
     }
-    @PostMapping(value = "/like")
+    @PostMapping
     public ResponseEntity<LikeResponse> addLike(HttpServletRequest request) {
-        return ResponseEntity.ok(likeService.insertLike(request.getSession().getId()));
+        return ResponseEntity.ok(service.insertLike(request.getSession().getId()));
     }
-    @DeleteMapping(value = "/like")
+    @DeleteMapping
     public ResponseEntity<LikeResponse> deleteLike(HttpServletRequest request) {
-        return ResponseEntity.ok(likeService.deleteLikeInfo(request.getSession().getId()));
+        return ResponseEntity.ok(service.deleteLikeInfo(request.getSession().getId()));
     }
 
 }

@@ -35,8 +35,17 @@ const projectDetails: IProject[] = [
         shortDesc: "Secure E-Commerce Website",
         longDesc: (
             <Stack>
-                Website made as a group project for Foundation of Computer Security course in IIITD.
-                Has portals for buyer seller and admin.
+                <ul>
+                    <li>Website made as a group project for Foundation of Computer Security course in IIITD.</li>
+                    <li>Has portals for buyer seller and admin.</li>
+                    <li>Payments using stripe api.</li>
+                    <li>Inventory and payment tracking.</li>
+                    <li>Seller authorization by admin.</li>
+                    <li>Deployed on my local server <a href={"https://shop.etashtyagi.tk"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                    <li>Source Code <a href={"https://git.etashtyagi.tk/EtashTyagi/fcs_ecommerce"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (AddShoppingCart),
@@ -48,7 +57,7 @@ const projectDetails: IProject[] = [
             ToolsTags.MySQL,
             "Nginx"],
         slug: "electroverse",
-        status: ProjectStatus.Deployed
+        status: ProjectStatus.Deployed,
     },
     {
         title: "Kaseki",
@@ -56,7 +65,15 @@ const projectDetails: IProject[] = [
         shortDesc: "Youtube Song Downloader And Player",
         longDesc: (
             <Stack>
-                Youtube song download
+                <ul>
+                    <li>Android app to download songs or podcasts from youtube.</li>
+                    <li>Uses official google youtube api.</li>
+                    <li>Can play/autoplay, seek, delete songs.</li>
+                    <li>Done as a side project in team of 2.</li>
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/Kaseki"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                    <li>Please replace with own api key if limit exceeded error on search.</li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (MusicNote),
@@ -73,7 +90,14 @@ const projectDetails: IProject[] = [
         shortDesc: "JavaFx clone of color switch game",
         longDesc: (
             <Stack>
-                AP
+                <ul>
+                    <li>JavaFx desktop application game similar to color switch.</li>
+                    <li>No gaming libraries, collision detection using geometry.</li>
+                    <li>Supports custom colors, local leaderboard, login/signup.</li>
+                    <li>Done as Advanced Programming project in IIITD in team of 2.</li>
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/Color-Switch-Game"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (SportsEsports),
@@ -90,7 +114,11 @@ const projectDetails: IProject[] = [
         shortDesc: "Kibana logstash...",
         longDesc: (
             <Stack>
-                Internship Project
+                <ul>
+                    <li>Internship project at deutsche telekom digital labs.</li>
+                    <li>Created a system to record business events and a ui to show them.</li>
+                    <li>Supported dynamic filters, datetime filtering sorting event type filtering, etc...</li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (Dashboard),
@@ -109,7 +137,13 @@ const projectDetails: IProject[] = [
         shortDesc: "Kernel firewall module for defeating port scans",
         longDesc: (
             <Stack>
-                Done as a part of network and system security course at IIITD
+                <ul>
+                    <li>Done as a Network and System Security-2 assignment in IIITD.</li>
+                    <li>Kernel level stateful firewall for linux.</li>
+                    <li>Can detect, log and stop many types of network port scanning techniques.</li>
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/recon_ghost"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (Security),
@@ -117,7 +151,7 @@ const projectDetails: IProject[] = [
         tags: [LanguageTags.C,
             ToolsTags.Linux],
         slug: "recon_ghost",
-        status: ProjectStatus.Completed
+        status: ProjectStatus.Completed,
     },
     {
         title: "Send It!",
@@ -125,7 +159,14 @@ const projectDetails: IProject[] = [
         shortDesc: "whatsapp clone web",
         longDesc: (
             <Stack>
-                Indefinitely on hold.
+                <ul>
+                    <li>Peer to peer messaging app.</li>
+                    <li>Abandoned.</li>
+                    <li>Deployed on github <a href={"https://etashtyagi.github.io/SendIt/"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/SendIt"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                </ul>
             </Stack>
         ),
         sideBarIcon: (WhatsApp),
@@ -137,7 +178,7 @@ const projectDetails: IProject[] = [
             FrameworkTags.Spring,
             ToolsTags.GitHub],
         slug: "send_it",
-        status: ProjectStatus.Abandoned
+        status: ProjectStatus.Abandoned,
     },
 ]
 

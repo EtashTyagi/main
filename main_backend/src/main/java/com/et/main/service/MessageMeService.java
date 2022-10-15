@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageMeService {
-    private final MessageMeRepository messageMeRepository;
+    private final MessageMeRepository repository;
 
     @Autowired
     public MessageMeService(MessageMeRepository messageMeRepository) {
-        this.messageMeRepository = messageMeRepository;
+        this.repository = messageMeRepository;
     }
 
     public void saveMessage() {

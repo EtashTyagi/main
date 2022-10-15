@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import {AppThemes, THEME_PALETTE} from "./constants";
+import {APP_BAR_COLOR, APP_DRAWER_COLOR, AppThemes, THEME_PALETTE} from "./constants";
 import Color from 'color';
 
 
@@ -9,20 +9,23 @@ const index = (Object.keys(AppThemes) as (keyof typeof AppThemes)[]).map(
             [key]: createTheme(
                 {
                     palette: THEME_PALETTE[key],
+                    typography: {
+
+                    },
                     components: {
                         MuiBackdrop: {
                             styleOverrides: {
                                 root: ({theme}) => ({
                                     backdropFilter: "blur(3px)",
-                                    backgroundColor: Color(theme.palette.common.black).alpha(0.4).string()
+                                    backgroundColor: Color(theme.palette.common.black).alpha(0.1618).string()
                                 })
                             }
                         },
                         MuiAppBar: {
                             styleOverrides: {
                                 colorPrimary: ({ownerState, theme}) => ({
-                                    backdropFilter: "blur(8px)",
-                                    backgroundColor: Color(theme.palette.background.default).alpha(0.68).string(),
+                                    backdropFilter: "blur(4px)",
+                                    backgroundColor: APP_BAR_COLOR[key],
                                     color: theme.palette.text.primary,
                                     borderBottom:  `1px solid ${theme.palette.divider}`,
                                 }),
@@ -32,7 +35,7 @@ const index = (Object.keys(AppThemes) as (keyof typeof AppThemes)[]).map(
                             styleOverrides: {
                                 paper: ({ownerState, theme}) => ({
                                     backdropFilter: "blur(8px)",
-                                    backgroundColor: Color(theme.palette.background.default).alpha(0.9).string(),
+                                    backgroundColor: APP_DRAWER_COLOR[key],
                                     color: theme.palette.text.primary,
                                     borderBottom:  `1px solid ${theme.palette.divider}`,
                                 }),

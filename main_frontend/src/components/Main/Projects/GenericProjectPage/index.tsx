@@ -5,7 +5,7 @@ import {
     Modal,
     Paper,
     Stack,
-    StackProps,
+    StackProps, Toolbar,
     useMediaQuery,
     useTheme
 } from "@mui/material";
@@ -42,6 +42,8 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
     }
 
     return (
+        <>
+            <Toolbar/>
             <Stack {...stackProps}>
                 <Carousel height={vh} indicators={false} autoPlay={true} sx={{minHeight: MIN_IMAGE_HEIGHT}}>
                     {project.imageSrc.map(
@@ -94,9 +96,9 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
                         }
                     }} >
                         <Paper sx={{objectFit: "scale-down",
-                        minWidth: "800px"}}
+                            minWidth: "800px"}}
                                height={"100%"} elevation={0}
-                            component={"img"} src={selectedImage}
+                               component={"img"} src={selectedImage}
                         />
                     </Stack>
 
@@ -137,7 +139,7 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
                     {project.longDesc}
                 </Stack>
             </Stack>
-
+        </>
     );
 };
 

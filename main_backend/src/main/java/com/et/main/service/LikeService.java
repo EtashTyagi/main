@@ -11,15 +11,15 @@ import java.util.Date;
 
 @Service
 public class LikeService {
-    private final LikeRepository likeRepository;
+    private final LikeRepository repository;
 
     @Autowired
     public LikeService(LikeRepository likeRepository) {
-        this.likeRepository = likeRepository;
+        this.repository = likeRepository;
     }
 
     public LikeResponse getLikeInfo(String sessionId) {
-        return new LikeResponse(likeRepository.findAll().size(), likeRepository.findById(sessionId).isPresent());
+        return new LikeResponse(repository.findAll().size(), repository.findById(sessionId).isPresent());
     }
 
     public LikeResponse insertLike(String sessionId) {
@@ -29,7 +29,7 @@ public class LikeService {
             newResponse.setMessage("Session has already liked");
             return newResponse;
         } else {
-            likeRepository.insert(new Like(sessionId, new Date()));
+            repository.insert(new Like(sessionId, new Date()));
             return getLikeInfo(sessionId);
         }
     }
@@ -37,7 +37,7 @@ public class LikeService {
     public LikeResponse deleteLikeInfo(String sessionId) {
         LikeResponse previousResponse = getLikeInfo(sessionId);
         if (previousResponse.getUserLiked()) {
-            likeRepository.deleteById(sessionId);
+            repository.deleteById(sessionId);
             return getLikeInfo(sessionId);
         } else {
             LikeResponse newResponse = getLikeInfo(sessionId);

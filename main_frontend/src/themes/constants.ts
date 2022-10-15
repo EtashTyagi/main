@@ -1,5 +1,6 @@
 import {PaletteMode, Theme} from "@mui/material";
 import Color from "color";
+import {grey} from "@mui/material/colors";
 
 export enum AppThemes {
     LIGHT="LIGHT",
@@ -10,7 +11,7 @@ export const THEME_PALETTE = {
     [AppThemes.LIGHT]: {
         mode: "light" as PaletteMode,
         background: {
-            default: Color("white").darken(0.01618).string()
+            default: grey[50]
         }
     },
     [AppThemes.DARK]: {
@@ -19,13 +20,13 @@ export const THEME_PALETTE = {
 }
 
 export const APP_BAR_COLOR = {
-    [AppThemes.LIGHT]: "rgba(0,0,30, 0.4)",
-    [AppThemes.DARK]: "rgba(0,0,30, 0.4)"
+    [AppThemes.DARK]: Color(grey[900]).alpha(0.90).string(),
+    [AppThemes.LIGHT]: Color("white").alpha(0.75).string()
 }
 
-export const BACKDROP_COLOR = {
-    [AppThemes.LIGHT]: "rgba(0,0,30, 0.4)",
-    [AppThemes.DARK]: "rgba(30,0,0, 0.4)"
+export const APP_DRAWER_COLOR = {
+    [AppThemes.DARK]: Color(grey[900]).alpha(0.90).string(),
+    [AppThemes.LIGHT]: Color("white").alpha(0.90).string()
 }
 
 export const SIDEBAR_WIDTH = 300

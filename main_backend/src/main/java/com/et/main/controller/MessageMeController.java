@@ -8,17 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
+@RequestMapping("${apiPrefix}/message")
 public class MessageMeController {
-    private final MessageMeService messageMeService;
+    private final MessageMeService service;
 
     @Autowired
     public MessageMeController(MessageMeService messageMeService) {
-        this.messageMeService = messageMeService;
+        this.service = messageMeService;
     }
 
-    @PostMapping(value = "/message")
+    @PostMapping
     public ResponseEntity<String> sendMessage(@RequestParam String sentBy, HttpServletRequest request) {
-        messageMeService.saveMessage();
+        service.saveMessage();
         return ResponseEntity.ok().body("");
     }
 }

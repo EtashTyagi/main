@@ -9,6 +9,7 @@ import themes from "./themes";
 import {GlobalStyles, Theme} from "@mui/material";
 import {createStyles} from "@mui/material/styles";
 import {BrowserRouter} from "react-router-dom";
+import {SnackbarProvider} from "notistack";
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);
@@ -36,7 +37,9 @@ const Index = () => {
         <ThemeProvider theme={themes[theme]}>
             <CssBaseline enableColorScheme={true} />
             <GlobalStyles styles={rootStyle(themes[theme])}/>
-            <App />
+            <SnackbarProvider maxSnack={5}>
+                <App />
+            </SnackbarProvider>
         </ThemeProvider>
     );
 };

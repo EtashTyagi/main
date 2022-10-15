@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Stack, useMediaQuery, useTheme} from "@mui/material";
 import {StyledFullScreenWrapper, SubTitleTypography, TitleTypography} from "../../style";
 import SkillBadge from "./SkillBadge";

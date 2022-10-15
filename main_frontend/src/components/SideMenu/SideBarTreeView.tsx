@@ -20,7 +20,7 @@ import {Tooltip, useMediaQuery, useTheme} from "@mui/material";
 import { Link as ScrollLink } from 'react-scroll'
 import {ABOUT_ME_LIFE_EVENTS_ID, ABOUT_ME_SKILLS_ID, ABOUT_ME_WELCOME_ID} from "../../constants/elementToId";
 import { useNavigate, useLocation } from 'react-router-dom';
-import {ABOUT_ME_ROUTE, PROFILES_ROUTE, SYSTEM_ARCHITECTURE_ROUTE, DOWNLOADS_ROUTE, PROJECTS_ROUTE} from "../../constants/routes";
+import {ABOUT_ME_ROUTE, PROFILES_ROUTE, OTHER_SITES_ROUTE, DOWNLOADS_ROUTE, PROJECTS_ROUTE} from "../../constants/routes";
 import projectDetails from "../../constants/Projects";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
@@ -143,8 +143,8 @@ export default function SideBarTreeView() {
             defaultEndIcon={<div style={{ width: 24 }} />}
             sx={{ flexGrow: 1, overflowY: 'auto' }}
         >
-            <StyledTreeItem nodeId={SYSTEM_ARCHITECTURE_ROUTE} labelText="System Architecture" labelIcon={Dns}
-                            onClick={() => navigateToOuter(SYSTEM_ARCHITECTURE_ROUTE)}/>
+            <StyledTreeItem nodeId={OTHER_SITES_ROUTE} labelText="Other Sites" labelIcon={Dns}
+                            onClick={() => navigateToOuter(OTHER_SITES_ROUTE)}/>
             <StyledTreeItem nodeId={ABOUT_ME_ROUTE} labelText="About Me" labelIcon={InfoIcon}
                             onClick={() => navigateToOuter(ABOUT_ME_ROUTE)}>
                 <ScrollLink to={ABOUT_ME_WELCOME_ID} spy={true} smooth={true} onClick={collapseIfSmall}>

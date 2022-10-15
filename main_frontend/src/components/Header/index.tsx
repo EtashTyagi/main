@@ -13,8 +13,11 @@ import Brand from "../Brand";
 import {setGlobalTheme} from "../../themes/themeSlice";
 import themes from "../../themes";
 import {deleteLike, getLikeStatus, postLike} from "../../api/requests";
+import {useSnackbar} from "notistack";
+import {handleApiErrorSnackbar} from "../../utils/handleSnackbar";
 
 const Header = () => {
+    const {enqueueSnackbar} = useSnackbar()
     const dispatch = useDispatch()
     const isSidebarOpen = useSelector((state: RootState) => state.isSideMenuOpen)
     const selectedTheme = useSelector((state: RootState) => state.theme)
@@ -27,9 +30,14 @@ const Header = () => {
 
     useEffect(
         () => {
-            getLikeStatus(dispatch)
+            getLikeStatus(dispatch).then(
+                (response) => {
+                    console.log(response)
+                    handleApiErrorSnackbar(enqueueSnackbar, response)
+                }
+            )
         }
-        , [dispatch])
+        , [dispatch, enqueueSnackbar])
 
     const toggleSidebar = () => {
         dispatch(setSideMenuOpen(!isSidebarOpen))
@@ -37,9 +45,17 @@ const Header = () => {
 
     const toggleLike = () => {
         if (latestLikeResponse.userLiked) {
-            deleteLike(dispatch)
+            deleteLike(dispatch).then(
+                (response) => {
+                    handleApiErrorSnackbar(enqueueSnackbar, response)
+                }
+            )
         }  else {
-            postLike(dispatch)
+            postLike(dispatch).then(
+                (response) => {
+                    handleApiErrorSnackbar(enqueueSnackbar, response)
+                }
+            )
         }
     }
 
