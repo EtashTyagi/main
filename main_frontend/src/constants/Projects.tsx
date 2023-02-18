@@ -41,9 +41,9 @@ const projectDetails: IProject[] = [
                     <li>Payments using stripe api.</li>
                     <li>Inventory and payment tracking.</li>
                     <li>Seller authorization by admin.</li>
-                    <li>Deployed on my local server <a href={"https://shop.etashtyagi.tk"} target={"_blank"} rel="noreferrer">here</a>.
+                    <li>Deployed on my local server <a href={"https://shop.etashtyagi.in"} target={"_blank"} rel="noreferrer">here</a>.
                     </li>
-                    <li>Source Code <a href={"https://git.etashtyagi.tk/EtashTyagi/fcs_ecommerce"} target={"_blank"} rel="noreferrer">here</a>.
+                    <li>Source Code <a href={"https://git.etashtyagi.in/EtashTyagi/fcs_ecommerce"} target={"_blank"} rel="noreferrer">here</a>.
                     </li>
                 </ul>
             </Stack>
