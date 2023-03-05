@@ -79,3 +79,7 @@ export const belowLargeScreen = (theme: Theme) => {
 export const largeScreen = (theme: Theme) => {
     return theme.breakpoints.up("lg")
 };
+
+export const longScreen =  () => {
+    return "@media (min-height: 850px)"
+}

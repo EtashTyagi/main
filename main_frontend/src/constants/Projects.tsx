@@ -1,13 +1,18 @@
+import * as React from "react";
 import {ReactElement} from "react";
 import {FrameworkTags, LanguageTags, ToolsTags} from "./SkillAndProjectTags";
 import {Stack} from "@mui/material";
-import {AddShoppingCart, Dashboard, MusicNote, Security, SportsEsports, WhatsApp} from "@mui/icons-material";
-import * as React from "react";
+import {AddShoppingCart, ChildCare, Dashboard, MusicNote, Security, SportsEsports, WhatsApp} from "@mui/icons-material";
 import {SvgIconProps} from "@mui/material/SvgIcon";
 import FcsEcommerceImg from "../resources/fcs_ecommerce.png"
 import SendItImg from "../resources/send_it.png"
 import KasekiImg from "../resources/kaseki.jpg"
 import ColorSwitchImg from "../resources/color_switch.png"
+import VardaanImg1 from "../resources/vardaan_ngo_1.png"
+import VardaanImg2 from "../resources/vardaan_ngo_2.png"
+import VardaanImg3 from "../resources/vardaan_ngo_3.png"
+import VardaanImg4 from "../resources/vardaan_ngo_4.png"
+
 import AuditDashboardImg from "../resources/audit_dashboard.png"
 import ReconGhostImg from "../resources/recon_ghost.png"
 
@@ -130,6 +135,31 @@ const projectDetails: IProject[] = [
             "ElasticDB", "Logstash", "Kibana"],
         slug: "audit_dashboard",
         status: ProjectStatus.Completed
+    },
+    {
+        title: "Website for NGO",
+        sidebarTitle: "Website for NGO",
+        shortDesc: "Vardaan Center For Special Children",
+        longDesc: (
+            <Stack>
+                <ul>
+                    <li>React Website for NGO.</li>
+                    <li>Material-UI for styling.</li>
+                    <li>Deployed on my raspberry-pi <a href={"https://vardaancenterforspecialchildren.in"} target={"_blank"}>
+                            here
+                        </a>.
+                    </li>
+                </ul>
+            </Stack>
+        ),
+        sideBarIcon: (ChildCare),
+        imageSrc: [VardaanImg1, VardaanImg2, VardaanImg3, VardaanImg4],
+        tags: [LanguageTags.JavaScript,
+            FrameworkTags.React,
+            FrameworkTags.MUI,
+            ToolsTags.Raspberry],
+        slug: "vardaan_ngo",
+        status: ProjectStatus.Deployed
     },
     {
         title: "Recon Ghost",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
@@ -10,9 +10,6 @@ import {GlobalStyles, Theme} from "@mui/material";
 import {createStyles} from "@mui/material/styles";
 import {BrowserRouter} from "react-router-dom";
 import {SnackbarProvider} from "notistack";
-
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement!);
 
 const rootStyle = (theme: Theme) => createStyles({
     '*::-webkit-scrollbar': {
@@ -28,6 +25,9 @@ const rootStyle = (theme: Theme) => createStyles({
         ':active': {
             backgroundColor: theme.palette.error.main
         }
+    },
+    "html": {
+        scrollSnapType: "y mandatory"
     }
 })
 
@@ -44,10 +44,11 @@ const Index = () => {
     );
 };
 
-root.render(
+ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <Index/>
         </BrowserRouter>
-    </Provider>
-);
+    </Provider>,
+    document.getElementById('root')
+)

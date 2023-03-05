@@ -1,9 +1,10 @@
 import {styled, Tooltip, tooltipClasses, TooltipProps} from "@mui/material";
 import {CUSTOM_TOOLTIP_BACKGROUND, CUSTOM_TOOLTIP_MAX_WIDTH, CUSTOM_TOOLTIP_TEXT} from "../../themes/constants";
 
-export const StyledCustomTooltip = styled(({ className, ...props }: TooltipProps) => (
-    <Tooltip {...props} classes={{ popper: className }}/>
-))(({ theme }) => ({
+const ProppedTooltip = ({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} children={props.children}/>)
+
+export const StyledCustomTooltip = styled(ProppedTooltip)(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
         backgroundColor: CUSTOM_TOOLTIP_BACKGROUND(theme),
         backdropFilter: "blur(8px)",

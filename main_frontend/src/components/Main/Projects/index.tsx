@@ -1,6 +1,5 @@
 import React from 'react';
 import {Divider, Grid, Toolbar, Typography, useMediaQuery, useTheme} from "@mui/material";
-import Filter from "./Filter";
 import {StyledFullScreenWrapper} from "../style";
 import {Route, Routes} from "react-router-dom";
 import projectDetails from "../../../constants/Projects";
@@ -19,9 +18,9 @@ const Projects = () => {
                     <Toolbar/>
                     <StyledFullScreenWrapper spacing={2}>
                         <Typography variant={isSmallScreen ? "h4" : "h3"}>
-                            Find Projects
+                            Projects
                         </Typography>
-                        <Filter/>
+                        {/*<Filter/>*/}
                         <Divider/>
                         <Grid spacing={2} container justifyContent={"space-evenly"} alignItems={"center"} pr={4}>
                             {

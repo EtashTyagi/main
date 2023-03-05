@@ -18,7 +18,7 @@ const LifeEvents = () => {
     const navigate = useNavigate()
 
     return (
-        <StyledFullScreenWrapper id={ABOUT_ME_LIFE_EVENTS_ID}>
+        <StyledFullScreenWrapper id={ABOUT_ME_LIFE_EVENTS_ID} snap={true}>
             <TitleTypography>
                 Life Events
             </TitleTypography>
@@ -68,7 +68,7 @@ const LifeEvents = () => {
                     <Stack width={CUSTOM_TOOLTIP_MAX_WIDTH}>
                         <Typography variant={"subtitle1"}>Computer Science</Typography>
                         <Divider/>
-                        <Typography variant={"caption"} mt={0.35}>CGPA: 8.02 (6<sup>th</sup> semester)</Typography>
+                        <Typography variant={"caption"} mt={0.35}>CGPA: 7.86 (7<sup>th</sup> semester)</Typography>
                     </Stack>
                 }/>
                 <LifeTimelineItem date={"May 2022 - Jul 2022"} title={"Internship"} place={"Gurgaon, Haryana"}

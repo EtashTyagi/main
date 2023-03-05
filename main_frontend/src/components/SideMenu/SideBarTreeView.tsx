@@ -16,7 +16,7 @@ import {
     Handyman,
     TimelineRounded
 } from "@mui/icons-material";
-import {Tooltip, useMediaQuery, useTheme} from "@mui/material";
+import {useMediaQuery, useTheme} from "@mui/material";
 import { Link as ScrollLink } from 'react-scroll'
 import {ABOUT_ME_LIFE_EVENTS_ID, ABOUT_ME_SKILLS_ID, ABOUT_ME_WELCOME_ID} from "../../constants/elementToId";
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -194,13 +194,13 @@ export default function SideBarTreeView() {
                 {
                     MyProfiles.map(
                         (e) => (
-                            <Tooltip title={e.username} key={e.name} sx={{ml: 0.5}}>
-                                <StyledTreeItem nodeId={PROFILES_ROUTE+"/"+e.name} labelIcon={e.icon} labelText={e.name}
-                                                onClick={() => {
-                                                    fakeNavigateToInner(PROFILES_ROUTE+"/"+e.name);
-                                                    window.open(e.url, "_blank")
-                                                }}/>
-                            </Tooltip>
+                                    <StyledTreeItem key={e.name}
+                                                    nodeId={PROFILES_ROUTE+"/"+e.name}
+                                                    labelIcon={e.icon} labelText={e.name}
+                                                    onClick={() => {
+                                                        fakeNavigateToInner(PROFILES_ROUTE+"/"+e.name);
+                                                        window.open(e.url, "_blank")
+                                                    }}/>
                         )
                     )
                 }

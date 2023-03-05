@@ -1,4 +1,4 @@
-import {OptionsObject, SnackbarKey, SnackbarMessage, SnackbarProvider} from "notistack";
+import {OptionsObject, SnackbarKey, SnackbarMessage} from "notistack";
 import {ApiResponseType} from "../api/requests";
 import {SnackbarOrigin} from "@mui/material";
 
@@ -21,4 +21,13 @@ export const handleApiErrorSnackbar = (
     }
     return false
 
+}
+
+export const handleNotImplementedSnackbar = (
+    enqueueSnackbar: (message: SnackbarMessage,
+                        options?: OptionsObject) => SnackbarKey) => {
+    enqueueSnackbar('Feature not implemented yet', {
+        variant: 'warning',
+        anchorOrigin: SNACKBAR_ORIGIN
+    })
 }

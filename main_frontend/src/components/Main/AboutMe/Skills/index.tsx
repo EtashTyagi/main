@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Stack, useMediaQuery, useTheme} from "@mui/material";
 import {StyledFullScreenWrapper, SubTitleTypography, TitleTypography} from "../../style";
 import SkillBadge from "./SkillBadge";
@@ -21,7 +21,7 @@ const Skills = () => {
     const itemsPerPage = isSmallScreen ? 2 : isLowerMediumScreen ? 3 : isUpperMediumScreen ? 4 : isExtraLargeScreen ? 7:5
     const autoPlay = isLowerMediumScreen || isSmallScreen
     return (
-        <StyledFullScreenWrapper id={ABOUT_ME_SKILLS_ID}>
+        <StyledFullScreenWrapper id={ABOUT_ME_SKILLS_ID} snap={true}>
             <TitleTypography>
                 Skills
             </TitleTypography>

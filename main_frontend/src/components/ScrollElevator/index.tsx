@@ -1,7 +1,7 @@
 import React, {ReactElement} from "react";
 import {useScrollTrigger} from "@mui/material";
 
-export interface IScrollElevatorProps extends React.PropsWithChildren{
+export interface IScrollElevatorProps extends React.PropsWithChildren<any>{
     scrollThreshold?: number,
     beforeElevation?: number,
     afterElevation?: number,

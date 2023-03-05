@@ -14,7 +14,7 @@ import {setGlobalTheme} from "../../themes/themeSlice";
 import themes from "../../themes";
 import {deleteLike, getLikeStatus, postLike} from "../../api/requests";
 import {useSnackbar} from "notistack";
-import {handleApiErrorSnackbar} from "../../utils/handleSnackbar";
+import {handleApiErrorSnackbar, handleNotImplementedSnackbar} from "../../utils/handleSnackbar";
 
 const Header = () => {
     const {enqueueSnackbar} = useSnackbar()
@@ -41,6 +41,10 @@ const Header = () => {
 
     const toggleSidebar = () => {
         dispatch(setSideMenuOpen(!isSidebarOpen))
+    }
+
+    const onMessageMeClick = () => {
+        handleNotImplementedSnackbar(enqueueSnackbar)
     }
 
     const toggleLike = () => {
@@ -108,7 +112,8 @@ const Header = () => {
                         !isSmallScreen &&
                         <Box >
                             <Tooltip title={"Message Me"}>
-                                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                                <IconButton size="large" aria-label="message-me" color="inherit"
+                                            onClick={onMessageMeClick}>
                                     <MailIcon />
                                 </IconButton>
                             </Tooltip>
@@ -147,6 +152,7 @@ const Header = () => {
             </StyledAppBar>
             {isMenuOpen && isSmallScreen && <HeaderMenu isMenuOpen={isMenuOpen}
                                                         toggleMenuOpen={toggleMenuOpen}
+                                                        onMessageMeClick={onMessageMeClick}
                                                         toggleGlobalTheme={toggleGlobalTheme}
                                                         selectedTheme={selectedTheme}
                                                         anchor={menuAnchor.current}
@@ -160,15 +166,17 @@ const Header = () => {
 interface IHeaderMenuProps {
     isMenuOpen: boolean,
     toggleMenuOpen: () => void,
+    onMessageMeClick: () => void,
     toggleGlobalTheme: () => void,
     selectedTheme: AppThemes,
     likes: number,
     toggleLikes: () => void,
     anchor?: HTMLElement,
+
 }
 
 const HeaderMenu = (props: IHeaderMenuProps) => {
-    const {isMenuOpen, toggleMenuOpen, anchor, selectedTheme, toggleGlobalTheme, toggleLikes, likes} = props
+    const {isMenuOpen, toggleMenuOpen, anchor, selectedTheme, onMessageMeClick, toggleGlobalTheme, toggleLikes, likes} = props
     return (
         <Menu
             anchorEl={anchor}
@@ -185,8 +193,8 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
             open={isMenuOpen}
             onClose={toggleMenuOpen}
         >
-            <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <MenuItem onClick={onMessageMeClick}>
+                <IconButton size="large" color="inherit" aria-label={"message-me"}>
                     <MailIcon />
                 </IconButton>
                 <p>Message Me</p>

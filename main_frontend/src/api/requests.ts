@@ -3,11 +3,11 @@ import {LIKE_SLUG} from "./constants";
 import {setLikeResponse} from "../store/like/likeResponseSlice";
 import {AnyAction, Dispatch} from "redux";
 import {AxiosResponse} from "axios";
-import {handleApiErrorSnackbar} from "../utils/handleSnackbar";
 
 export const getLikeStatus = async (dispatch: Dispatch<AnyAction>) => {
     try {
         const response = await axiosInstance.get(LIKE_SLUG)
+        console.log(response)
         dispatch(setLikeResponse(response.data))
         return response
     } catch (e: any) {
