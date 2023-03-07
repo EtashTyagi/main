@@ -3,6 +3,7 @@ import StyledMainBox from "./style";
 import { Routes, Route } from "react-router-dom";
 import routeToComponent from "./routeToComponent";
 import {isExpandable} from "../../constants/routes";
+import NotFound from "./NotFound";
 
 const Main = () => {
 
@@ -18,6 +19,7 @@ const Main = () => {
                         }
                     )
                 }
+                <Route path={"*"} element={<NotFound/>}/>
             </Routes>
         </StyledMainBox>
     );
