@@ -19,7 +19,6 @@ public class SecurityConfiguration {
         http.anonymous().and().csrf().disable().cors();
         return http.build();
     }
-    // Cors allow etashtyagi.in, localhost:3000
 
      @Bean
      CorsConfigurationSource corsConfigurationSource() {
