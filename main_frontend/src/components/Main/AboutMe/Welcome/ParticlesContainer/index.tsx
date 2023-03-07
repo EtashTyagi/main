@@ -16,7 +16,7 @@ const ParticlesContainer = () => {
         fpsLimit: 60,
         particles: {
             number: {
-                value: 35,
+                value: 30,
                 density: {
                     enable: true,
                     value_area: 800
@@ -114,8 +114,8 @@ const ParticlesContainer = () => {
         },
         retina_detect: true,
     };
-    return <Particles id="tsparticle" init={customParticlesInit}
-                      options={options}/>;
+    return (<Particles id="tsparticle" init={customParticlesInit}
+                      options={options}/>);
 };
 
 export default ParticlesContainer;

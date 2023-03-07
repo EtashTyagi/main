@@ -57,7 +57,7 @@ const projectDetails: IProject[] = [
                     <li>Seller authorization by admin.</li>
                     <li>Deployed on my local server <a href={"https://shop.etashtyagi.in"} target={"_blank"} rel="noreferrer">here</a>.
                     </li>
-                    <li>Source Code <a href={"https://git.etashtyagi.in/EtashTyagi/fcs_ecommerce"} target={"_blank"} rel="noreferrer">here</a>.
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/fcs_ecommerce"} target={"_blank"} rel="noreferrer">here</a>.
                     </li>
                 </ul>
             </Stack>

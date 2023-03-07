@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("${apiPrefix}/like")
+@RequestMapping("/like")
 public class LikeController {
     private final LikeService service;
 

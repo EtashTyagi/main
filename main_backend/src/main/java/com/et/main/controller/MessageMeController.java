@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("${apiPrefix}/message")
+@RequestMapping("/message")
 public class MessageMeController {
     private final MessageMeService service;
 

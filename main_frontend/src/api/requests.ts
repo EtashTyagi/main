@@ -7,7 +7,6 @@ import {AxiosResponse} from "axios";
 export const getLikeStatus = async (dispatch: Dispatch<AnyAction>) => {
     try {
         const response = await axiosInstance.get(LIKE_SLUG)
-        console.log(response)
         dispatch(setLikeResponse(response.data))
         return response
     } catch (e: any) {
