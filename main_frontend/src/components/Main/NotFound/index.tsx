@@ -3,7 +3,6 @@ import {StyledFullScreenWrapper} from "../style";
 import {Toolbar, Typography} from "@mui/material";
 
 const Index = () => {
-    console.log("WTF")
     return (
         <StyledFullScreenWrapper alignItems={"center"}>
             <Toolbar/>
