@@ -10,9 +10,9 @@ services:
       - main-mongo-config:/data/configdb
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-  web:
-    build:  .
-    container_name: main_web
+  backend:
+    build:  ./main_backend
+    container_name: main_backend
     command: "java -jar /app.jar"
     restart: unless-stopped
     ports:

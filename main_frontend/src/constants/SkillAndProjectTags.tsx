@@ -53,7 +53,7 @@ export enum ToolsTags {
     Raspberry="Raspberry",
     GitHub="GitHub",
     Intellij="Intellij",
-    Cloudflared="Cloudflared",
+    Cloudflare="Cloudflare",
     MongoDb="MongoDb",
     Portainer="Portainer",
     Azure="Azure",
@@ -81,7 +81,7 @@ export const TagToIcon: {[key: string]: ReactElement} = {
     [ToolsTags.Raspberry]: <RaspberryIcon/>,
     [ToolsTags.GitHub]: <GithubIcon/>,
     [ToolsTags.Intellij]: <IntellijIcon/>,
-    [ToolsTags.Cloudflared]: <CloudflareIcon/>,
+    [ToolsTags.Cloudflare]: <CloudflareIcon/>,
     [ToolsTags.MongoDb]: <MongoDbIcon/>,
     [ToolsTags.Portainer]: <PortainerIcon/>,
     [ToolsTags.Azure]: <AzureIcon/>

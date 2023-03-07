@@ -2,7 +2,16 @@ import * as React from "react";
 import {ReactElement} from "react";
 import {FrameworkTags, LanguageTags, ToolsTags} from "./SkillAndProjectTags";
 import {Stack} from "@mui/material";
-import {AddShoppingCart, ChildCare, Dashboard, MusicNote, Security, SportsEsports, WhatsApp} from "@mui/icons-material";
+import {
+    AddShoppingCart,
+    ChildCare,
+    Dashboard,
+    MusicNote,
+    Security,
+    SportsEsports,
+    WhatsApp,
+    Window
+} from "@mui/icons-material";
 import {SvgIconProps} from "@mui/material/SvgIcon";
 import FcsEcommerceImg from "../resources/fcs_ecommerce.png"
 import SendItImg from "../resources/send_it.png"
@@ -12,7 +21,7 @@ import VardaanImg1 from "../resources/vardaan_ngo_1.png"
 import VardaanImg2 from "../resources/vardaan_ngo_2.png"
 import VardaanImg3 from "../resources/vardaan_ngo_3.png"
 import VardaanImg4 from "../resources/vardaan_ngo_4.png"
-
+import MainImg from "../resources/main.png"
 import AuditDashboardImg from "../resources/audit_dashboard.png"
 import ReconGhostImg from "../resources/recon_ghost.png"
 
@@ -145,7 +154,7 @@ const projectDetails: IProject[] = [
                 <ul>
                     <li>React Website for NGO.</li>
                     <li>Material-UI for styling.</li>
-                    <li>Deployed on my raspberry-pi <a href={"https://vardaancenterforspecialchildren.in"} target={"_blank"}>
+                    <li>Deployed on my raspberry-pi <a href={"https://vardaancenterforspecialchildren.in"} target={"_blank"} rel={"noreferrer"}>
                             here
                         </a>.
                     </li>
@@ -159,6 +168,34 @@ const projectDetails: IProject[] = [
             FrameworkTags.MUI,
             ToolsTags.Raspberry],
         slug: "vardaan_ngo",
+        status: ProjectStatus.Deployed
+    },
+    {
+        title: "Personal Website",
+        sidebarTitle: "Personal Website",
+        shortDesc: "Inception?",
+        longDesc: (
+            <Stack>
+                <ul>
+                    <li>Main frontend is hosted on cloudflare pages.</li>
+                    <li>Backend is hosted on my server, managed through portainer.</li>
+                    <li>Server has scheduled downtime from 12am to 8am IST everyday.</li>
+                    <li>Source Code <a href={"https://github.com/EtashTyagi/main"} target={"_blank"} rel="noreferrer">here</a>.
+                    </li>
+                </ul>
+            </Stack>
+        ),
+        sideBarIcon: (Window),
+        imageSrc: [MainImg],
+        tags: [LanguageTags.TypeScript,
+            LanguageTags.Java,
+            FrameworkTags.React,
+            FrameworkTags.Spring,
+            FrameworkTags.MUI,
+            ToolsTags.Cloudflare,
+            ToolsTags.Docker
+        ],
+        slug: "personal_website",
         status: ProjectStatus.Deployed
     },
     {

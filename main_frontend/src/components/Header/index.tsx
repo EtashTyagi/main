@@ -1,5 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Badge, Box, IconButton, Menu, MenuItem, Toolbar, Tooltip, useMediaQuery, useTheme} from "@mui/material";
+import {
+    Badge,
+    Box,
+    CircularProgress,
+    IconButton,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Tooltip,
+    useMediaQuery,
+    useTheme
+} from "@mui/material";
 import { DarkMode, Favorite, LightMode} from "@mui/icons-material";
 import MenuIcon from '@mui/icons-material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
@@ -32,7 +43,6 @@ const Header = () => {
         () => {
             getLikeStatus(dispatch).then(
                 (response) => {
-                    console.log(response)
                     handleApiErrorSnackbar(enqueueSnackbar, response)
                 }
             )
@@ -125,7 +135,10 @@ const Header = () => {
                                     color="inherit"
                                     onClick={toggleLike}
                                 >
-                                    <Badge badgeContent={latestLikeResponse.totalLikes} color="error">
+                                    <Badge badgeContent={
+                                        latestLikeResponse.totalLikes !== -1 ? latestLikeResponse.totalLikes :
+                                            <CircularProgress size={10} thickness={6} sx={{color: "white"}} />
+                                    } color="error">
                                         <Favorite />
                                     </Badge>
                                 </IconButton>
@@ -205,7 +218,10 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
                     aria-label={`${likes} likes`}
                     color="inherit"
                 >
-                    <Badge badgeContent={likes} color="error">
+                    <Badge badgeContent={
+                        likes !== -1 ? likes :
+                            <CircularProgress size={10} thickness={6} sx={{color: "white"}} />
+                    } color="error">
                         <Favorite />
                     </Badge>
                 </IconButton>

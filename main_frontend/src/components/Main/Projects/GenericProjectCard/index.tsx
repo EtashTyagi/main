@@ -32,7 +32,7 @@ const GenericProjectCard = (props: IGenericProjectCardProps) => {
 
             }}}
               onClick={() => {navigate(PROJECTS_ROUTE+"/"+project.slug)}}>
-            <Stack sx={{position: "relative", overflow: "hidden"}}>
+            <Stack sx={{...cardProps, position: "relative", overflow: "hidden"}}>
                 <Skeleton
                     style={{position: "absolute",
                     height: "180%", width: "100%", top: "-40%"}}/>

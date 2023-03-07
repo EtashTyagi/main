@@ -12,7 +12,16 @@ export const handleApiErrorSnackbar = (
                       options?: OptionsObject) => SnackbarKey,
     apiResult: ApiResponseType) => {
 
-    if (apiResult.status !== 200) {
+    const timeInIndia = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+    const timeInIndiaHours = new Date(timeInIndia).getHours();
+
+    if (timeInIndiaHours < 8) {
+        enqueueSnackbar("Backend scheduled downtime from 12-8am IST", {
+            variant: 'error',
+            anchorOrigin: SNACKBAR_ORIGIN
+        })
+        return true
+    } else if (apiResult.status !== 200) {
         enqueueSnackbar(apiResult.data.toString(), {
             variant: 'error',
             anchorOrigin: SNACKBAR_ORIGIN
@@ -20,7 +29,6 @@ export const handleApiErrorSnackbar = (
         return true
     }
     return false
-
 }
 
 export const handleNotImplementedSnackbar = (

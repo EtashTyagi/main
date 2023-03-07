@@ -28,7 +28,7 @@ export const MyToolRatings: {[key: string]: number} = {
     [ToolsTags.Raspberry]: 4,
     [ToolsTags.GitHub]: 3.75,
     [ToolsTags.Intellij]: 3.5,
-    [ToolsTags.Cloudflared]: 3.25,
+    [ToolsTags.Cloudflare]: 3.25,
     [ToolsTags.MongoDb]: 3,
     [ToolsTags.Portainer]: 3,
     [ToolsTags.Azure]: 2

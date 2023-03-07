@@ -5,7 +5,7 @@ export default interface LikeResponse {
 }
 
 export const DEFAULT_LIKE_RESPONSE: LikeResponse = {
-    totalLikes: 0,
+    totalLikes: -1,
     userLiked: false
 }
 
