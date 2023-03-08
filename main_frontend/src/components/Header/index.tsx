@@ -137,7 +137,7 @@ const Header = () => {
                                 >
                                     <Badge badgeContent={
                                         latestLikeResponse.totalLikes !== -1 ? latestLikeResponse.totalLikes :
-                                            <CircularProgress size={10} thickness={6} sx={{color: "white"}} />
+                                            <CircularProgress size={10} thickness={5} sx={{color: "white"}} />
                                     } color="error">
                                         <Favorite />
                                     </Badge>
@@ -220,7 +220,7 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
                 >
                     <Badge badgeContent={
                         likes !== -1 ? likes :
-                            <CircularProgress size={10} thickness={6} sx={{color: "white"}} />
+                            <CircularProgress size={10} thickness={5} sx={{color: "white"}} />
                     } color="error">
                         <Favorite />
                     </Badge>
