@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import {
     aboveSmallScreen,
-    largeScreen, longScreen,
+    largeScreen,
     MAIN_Y_PADDING,
     mediumScreen,
     SIDEBAR_WIDTH,
@@ -38,30 +38,22 @@ export const TitleTypography = (props: TypographyProps) => {
     const theme = useTheme()
     const isSmallScreen = useMediaQuery(smallScreen(theme))
 
-    return <Typography {...props} variant={isSmallScreen ? "h2":"h1"}/>
+    return <Typography {...props} variant={isSmallScreen ? "h2":"h1"} fontFamily="'Lora', Georgia, serif"/>
 }
 
 export const SubTitleTypography = (props: TypographyProps) => {
     const theme = useTheme()
     const isSmallScreen = useMediaQuery(smallScreen(theme))
 
-    return <Typography {...props} variant={isSmallScreen ? "h4":"h3"} fontWeight={"bold"}/>
+    return <Typography {...props} variant={isSmallScreen ? "h4":"h3"} fontWeight={"bold"} fontFamily="'Lora', Georgia, serif"/>
 }
 
-interface ISnapStackProps extends StackProps {
-    snap?: boolean
-}
-const SnapStack = (props: ISnapStackProps) => {
-    const {snap, ...stackProps} = props
-    return (< Stack
-    {...
-        stackProps
-    }
-    />)
+const SnapStack = (props: StackProps) => {
+    return (<Stack {...props} />)
 }
 
 export const StyledFullScreenWrapper = styled(SnapStack)(
-    ({theme, snap}) => ({
+    ({theme}) => ({
         paddingTop: MAIN_Y_PADDING(theme),
         minHeight: `calc(100vh - ${useAppBarHeight()}px)`,
         [smallScreen(theme)]: {
@@ -71,9 +63,6 @@ export const StyledFullScreenWrapper = styled(SnapStack)(
         [aboveSmallScreen(theme)]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
-        },
-        [longScreen()]: {
-            scrollSnapAlign: snap ? "end" : "none"
         }
     })
 )

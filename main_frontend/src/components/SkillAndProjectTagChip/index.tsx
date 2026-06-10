@@ -47,8 +47,14 @@ const SkillAndProjectTagChip = (props: ISkillAndProjectTagChipProps) => {
 
     return (
         <Chip {...chipProps} label={tagName}
-            icon={React.cloneElement(TagToIcon[tagName] || <></>, {style: {color: color}})} sx={{...chipProps.sx, padding: 1,
-            background: background, color: color}}
+            icon={React.cloneElement(TagToIcon[tagName] || <></>, {style: {color: color}})} sx={{...chipProps.sx, paddingLeft: 1.5, paddingRight: 3, paddingTop: 1, paddingBottom: 1,
+            background: background, color: color, borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+            transition: 'all 0.3s ease-in-out',
+            '&:hover': {
+                transform: 'scale(1.08) rotate(-1deg)',
+                boxShadow: '0 4px 16px rgba(74, 124, 89, 0.2)'
+            }
+        }}
         />
     );
 };

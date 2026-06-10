@@ -41,27 +41,40 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
 
     [`& .${treeItemClasses.content}`]: {
 
-        borderTopRightRadius: theme.spacing(2),
-        borderBottomRightRadius: theme.spacing(2),
-        paddingRight: theme.spacing(1),
+        borderTopRightRadius: '24px',
+        borderBottomRightRadius: '24px',
+        paddingRight: theme.spacing(1.5),
+        paddingLeft: theme.spacing(1),
+        paddingTop: theme.spacing(0.5),
+        paddingBottom: theme.spacing(0.5),
         fontWeight: theme.typography.fontWeightMedium,
+        transition: 'all 0.3s ease-in-out',
         '&.Mui-expanded': {
             fontWeight: theme.typography.fontWeightRegular,
         },
         '&:hover': {
-            backgroundColor: theme.palette.action.hover,
+            backgroundColor: theme.palette.mode === 'dark' 
+                ? 'rgba(74, 124, 89, 0.15)' 
+                : 'rgba(61, 107, 79, 0.1)',
         },
         '&.Mui-focused, &.Mui-selected, &.Mui-selected.Mui-focused': {
-            backgroundColor: `var(--tree-view-bg-color, ${theme.palette.action.selected})`,
+            backgroundColor: theme.palette.mode === 'dark' 
+                ? 'rgba(74, 124, 89, 0.25)' 
+                : 'rgba(61, 107, 79, 0.15)',
         },
         [`& .${treeItemClasses.label}`]: {
             fontWeight: 'inherit',
         },
+        [`& .${treeItemClasses.iconContainer}`]: {
+            '& svg': {
+                color: theme.palette.primary.main,
+            }
+        }
     },
     [`& .${treeItemClasses.group}`]: {
         marginLeft: 0,
         [`& .${treeItemClasses.content}`]: {
-            paddingLeft: theme.spacing(2),
+            paddingLeft: theme.spacing(2.5),
         },
     },
 }));

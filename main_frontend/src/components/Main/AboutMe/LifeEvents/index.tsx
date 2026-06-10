@@ -3,7 +3,7 @@ import {StyledFullScreenWrapper, TitleTypography} from "../../style";
 import {AutoStories, ChildFriendly, School, Work} from "@mui/icons-material";
 import {Timeline} from "@mui/lab";
 import LifeTimelineItem from "./LifeTimelineItem";
-import {Button, Divider, Stack, Typography} from "@mui/material";
+import {Box, Button, Divider, Stack, Typography} from "@mui/material";
 import {CUSTOM_TOOLTIP_MAX_WIDTH} from "../../../../themes/constants";
 import {ABOUT_ME_LIFE_EVENTS_ID} from "../../../../constants/elementToId";
 // @ts-ignore
@@ -18,11 +18,22 @@ const LifeEvents = () => {
     const navigate = useNavigate()
 
     return (
-        <StyledFullScreenWrapper id={ABOUT_ME_LIFE_EVENTS_ID} snap={true}>
-            <TitleTypography>
+        <StyledFullScreenWrapper id={ABOUT_ME_LIFE_EVENTS_ID} sx={{ position: 'relative' }}>
+            <Box sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '4px',
+                height: '80%',
+                background: 'linear-gradient(180deg, transparent 0%, rgba(74, 124, 89, 0.3) 20%, rgba(200, 169, 110, 0.3) 50%, rgba(74, 124, 89, 0.3) 80%, transparent 100%)',
+                borderRadius: '4px',
+                zIndex: 0
+            }} />
+            <TitleTypography sx={{ zIndex: 1 }}>
                 Life Events
             </TitleTypography>
-            <Timeline style={{ justifyContent: "center", width: "100%"}}>
+            <Timeline style={{ justifyContent: "center", width: "100%", zIndex: 1 }}>
                 <LifeTimelineItem date={"26 Sep 2001"} title={"Birth"} place={"Kolkata, West Bengal"}
                                   icon={<ChildFriendly/>}
                                   dotColor={"primary"}

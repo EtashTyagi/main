@@ -11,7 +11,7 @@ import {
     useMediaQuery,
     useTheme
 } from "@mui/material";
-import { DarkMode, Favorite, LightMode} from "@mui/icons-material";
+import { Favorite, Park} from "@mui/icons-material";
 import MenuIcon from '@mui/icons-material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
 import MoreIcon from '@mui/icons-material/MoreVert';
@@ -150,12 +150,18 @@ const Header = () => {
                                     aria-label="Theme"
                                     onClick={toggleGlobalTheme}
                                     color="inherit"
+                                    sx={{
+                                        transition: 'transform 0.4s ease-in-out',
+                                        '&:hover': {
+                                            transform: 'rotate(15deg)'
+                                        }
+                                    }}
                                 >
                                     {
-                                        selectedTheme === AppThemes.LIGHT && <LightMode />
+                                        selectedTheme === AppThemes.LIGHT && <Park sx={{ color: '#4a7c59' }} />
                                     }
                                     {
-                                        selectedTheme === AppThemes.DARK && <DarkMode />
+                                        selectedTheme === AppThemes.DARK && <Park sx={{ color: '#c8a96e' }} />
                                     }
                                 </IconButton>
                             </Tooltip>
@@ -234,10 +240,10 @@ const HeaderMenu = (props: IHeaderMenuProps) => {
                     color="inherit"
                 >
                     {
-                        selectedTheme === AppThemes.LIGHT && <LightMode />
+                        selectedTheme === AppThemes.LIGHT && <Park sx={{ color: '#4a7c59' }} />
                     }
                     {
-                        selectedTheme === AppThemes.DARK && <DarkMode />
+                        selectedTheme === AppThemes.DARK && <Park sx={{ color: '#c8a96e' }} />
                     }
                 </IconButton>
                 <p>Theme</p>

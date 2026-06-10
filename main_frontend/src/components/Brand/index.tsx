@@ -8,7 +8,15 @@ const Brand = (props: BoxProps) => {
                 variant="h4"
                 noWrap
                 component="div"
-                fontFamily={"ariel"}
+                fontFamily={"'Lora', Georgia, serif"}
+                fontWeight={600}
+                sx={{
+                    background: 'linear-gradient(135deg, #4a7c59 0%, #c8a96e 100%)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    letterSpacing: '0.5px'
+                }}
             >
                 Etash Tyagi
             </Typography>
