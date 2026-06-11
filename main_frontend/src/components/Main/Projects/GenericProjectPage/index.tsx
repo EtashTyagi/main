@@ -19,6 +19,8 @@ import {
 } from "../../../../themes/constants";
 import {SubTitleTypography, TitleTypography} from "../../style";
 import SkillAndProjectTagChip from "../../../SkillAndProjectTagChip";
+import MarkdownRenderer from "../../../MarkdownRenderer";
+import {MyCombinedRatings} from "../../../../constants/MyRatings";
 
 const MIN_IMAGE_HEIGHT = 300
 
@@ -126,7 +128,7 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
                     <Grid justifyContent={"space-evenly"} alignItems={"center"} container
                           spacing={0.5}>
                         {
-                            project.tags.map(
+                            [...project.tags].sort((a, b) => (MyCombinedRatings[b] || 0) - (MyCombinedRatings[a] || 0)).map(
                                 (e) => (
                                     <Grid key={e} item>
                                         <SkillAndProjectTagChip tagName={e} key={e}/>
@@ -166,7 +168,7 @@ const GenericProjectPage = (props: IGenericProjectPageProps) => {
                         }} />
                         Details
                     </SubTitleTypography>
-                    {project.longDesc}
+                    <MarkdownRenderer slug={project.slug} />
                 </Stack>
             </Stack>
         </>

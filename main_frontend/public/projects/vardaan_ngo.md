@@ -1,0 +1,7 @@
+- Pro-bono website built for Vardaan Center for Special Children, an NGO supporting children with special needs.
+- Single-page React application with smooth scroll navigation between sections: Home, About, Programs, Gallery, and Contact.
+- Material-UI component library for consistent, accessible design with responsive layouts across all devices.
+- Image gallery showcasing the center's activities, events, and student achievements.
+- Contact form with validation for inquiries from parents and volunteers.
+- Self-hosted on a Raspberry Pi server, demonstrating low-cost deployment for non-profit organizations.
+- Deployed at [vardaancenterforspecialchildren.in](https://vardaancenterforspecialchildren.in).

@@ -43,7 +43,7 @@ const Skills = () => {
                 <MultipleItemCarousel sx={{py:1}} itemsPerPage={itemsPerPage} indicators={false}
                                       navButtonsAlwaysVisible={!autoPlay} autoPlay={autoPlay}>
                     {
-                        Object.keys(MyLanguageRatings).map(
+                        Object.keys(MyLanguageRatings).sort((a, b) => MyLanguageRatings[b] - MyLanguageRatings[a]).map(
                             (e) => (
                                 <SkillBadge title={e} key={e}/>
                             )
@@ -58,7 +58,7 @@ const Skills = () => {
                 <MultipleItemCarousel sx={{py:1}} itemsPerPage={itemsPerPage} indicators={false}
                                       navButtonsAlwaysVisible={!autoPlay} autoPlay={autoPlay}>
                     {
-                        Object.keys(MyFrameworkRatings).map(
+                        Object.keys(MyFrameworkRatings).sort((a, b) => MyFrameworkRatings[b] - MyFrameworkRatings[a]).map(
                             (e) => (
                                 <SkillBadge title={e} key={e}/>
                             )
@@ -73,7 +73,7 @@ const Skills = () => {
                 <MultipleItemCarousel sx={{py:1}} itemsPerPage={itemsPerPage} indicators={false}
                                       navButtonsAlwaysVisible={!autoPlay} autoPlay={autoPlay}>
                     {
-                        Object.keys(MyToolRatings).map(
+                        Object.keys(MyToolRatings).sort((a, b) => MyToolRatings[b] - MyToolRatings[a]).map(
                             (e) => (
                                 <SkillBadge title={e} key={e}/>
                             )

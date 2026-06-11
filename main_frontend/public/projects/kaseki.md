@@ -1,0 +1,9 @@
+- Native Android music player app that streams and downloads songs directly from YouTube, providing an ad-free listening experience.
+- Integrates the official YouTube Data API v3 for song search, metadata retrieval, and thumbnail loading.
+- Full-featured media player with play/pause, autoplay queue, seek controls, and background playback support.
+- Offline listening support — download songs to local storage for playback without an internet connection.
+- Search functionality with autocomplete suggestions powered by YouTube's search API.
+- Built with a clean MVVM architecture using Android's lifecycle-aware components.
+- Developed as a side project in a team of 2, with 78 commits over the development cycle.
+- Source Code [here](https://github.com/EtashTyagi/Kaseki).
+- Note: If search stops working due to YouTube API quota limits, replace the API key in Search.java's constructor with your own YouTube v3 API key from Google Cloud Console.

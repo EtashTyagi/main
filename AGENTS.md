@@ -72,6 +72,7 @@ There are NO lint/format scripts. Match existing code style by hand.
 | `constants/` | **ALL site content lives here as TS data** (see §4). |
 | `downloads/` | PDFs (resume, transcripts) imported as modules. |
 | `resources/` | Custom SVG icon components (`*Icon.tsx`) + project screenshots. |
+| `public/projects/` | Project detail markdown files (`{slug}.md`), fetched at runtime by `MarkdownRenderer`. |
 | `store/` | Redux store. Slices: `theme`, `isSideMenuOpen`, `likeResponse`. Exports `RootState`, `AppDispatch`. |
 | `themes/` | Theme factory + design tokens + `themeSlice` (persists LIGHT/DARK to localStorage key `THEME`). |
 | `utils/` | debounce, snackbar helpers, `useAppBarHeight` hook. |
@@ -96,6 +97,8 @@ There are NO lint/format scripts. Match existing code style by hand.
   `sideMenuSlice.ts`. Navigation is an MUI Lab `TreeView` in `SideBarTreeView.tsx`.
 - `MultipleItemCarousel/`, `CustomTooltip/`, `ScrollElevator/`, `SkillAndProjectTagChip/`
   — shared building blocks.
+- `MarkdownRenderer/` — fetches `/projects/{slug}.md` at runtime and renders it as HTML
+  using `react-markdown` + `remark-gfm`. Used by `GenericProjectPage` for project details.
 - `CircuitBackground/`, `NetworkBackground/`, `CursorTrail/` — **untracked WIP dead code,
   imported nowhere**. Do not assume they work; do not import without being asked.
 
@@ -116,11 +119,13 @@ There is no CMS/markdown. Content = TypeScript files in `src/constants/`.
 
 **Add/edit a project** (most common task):
 1. Edit `src/constants/Projects.tsx` — add an `IProject` entry: `title`, `sidebarTitle`,
-   `shortDesc`, `longDesc` (JSX element), `sideBarIcon`, `imageSrc[]` (import screenshots
+   `shortDesc`, `sideBarIcon`, `imageSrc[]` (import screenshots
    into `src/resources/`), `tags`, `slug`, `status`.
-2. That single entry auto-drives: the `/projects/:slug` route, sidebar tree item,
+2. Create `public/projects/{slug}.md` with the project's detailed description in markdown.
+   This is fetched and rendered by `MarkdownRenderer` on the project detail page.
+3. That single entry auto-drives: the `/projects/:slug` route, sidebar tree item,
    project card, and project page. No other code changes needed.
-3. **Manually** add `https://etashtyagi.in/projects/<slug>` to `public/sitemap.txt`.
+4. **Manually** add `https://etashtyagi.in/projects/<slug>` to `public/sitemap.txt`.
 
 **Add a skill**: add tag to enums in `src/constants/SkillAndProjectTags.tsx`, map it to an
 icon component in `TagToIcon` (create `src/resources/XxxIcon.tsx` if needed), and add a

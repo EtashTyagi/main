@@ -1,0 +1,7 @@
+- Internship project at Deutsche Telekom Digital Labs, built to provide enterprise-grade audit logging and event tracking.
+- Designed and implemented a full pipeline for recording business events using Logstash as the ingestion layer, Elasticsearch for storage and indexing, and Kibana for visualization.
+- Spring Boot backend exposes REST APIs for event submission and retrieval, with structured logging in JSON format.
+- React-based dashboard UI with dynamic filters including datetime range selection, event-type filtering, severity-level filtering, and full-text search across log entries.
+- Supports sorting, pagination, and export of filtered audit logs for compliance reporting.
+- Built with TypeScript for type-safe frontend components and Java for the backend service layer.
+- Integrated with the ELK stack (Elasticsearch, Logstash, Kibana) for scalable log aggregation and real-time monitoring.

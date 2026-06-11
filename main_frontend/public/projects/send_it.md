@@ -1,0 +1,8 @@
+- Real-time peer-to-peer web messaging application inspired by WhatsApp, built with a React frontend and Spring Boot backend.
+- Frontend features a chat interface with conversation threads, message timestamps, and online status indicators using Bootstrap for responsive styling.
+- Backend provides REST APIs for user registration, contact management, and message persistence with WebSocket support for real-time message delivery.
+- Session-based authentication with secure cookie handling for maintaining user login state.
+- Frontend deployed on GitHub Pages as a static site; backend was intended to run on a self-hosted server.
+- Project was abandoned before completion — core messaging flow works but features like group chats, media sharing, and push notifications were not implemented.
+- Deployed on GitHub [here](https://etashtyagi.github.io/SendIt/).
+- Source Code [here](https://github.com/EtashTyagi/SendIt).

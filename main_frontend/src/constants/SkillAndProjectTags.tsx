@@ -7,6 +7,7 @@ import JavascriptIcon from "../resources/JavascriptIcon";
 import TypescriptIcon from "../resources/TypescriptIcon";
 import MatlabIcon from "../resources/MatlabIcon";
 import RIcon from "../resources/RIcon";
+import KotlinIcon from "../resources/KotlinIcon";
 import ReactIcon from "../resources/ReactIcon";
 import DjangoIcon from "../resources/DjangoIcon";
 import BootstrapIcon from "../resources/BootstrapIcon";
@@ -24,6 +25,8 @@ import CloudflareIcon from "../resources/CloudflareIcon";
 import MongoDbIcon from "../resources/MongoDbIcon";
 import PortainerIcon from "../resources/PortainerIcon";
 import AzureIcon from "../resources/AzureIcon";
+import VibeCodingIcon from "../resources/VibeCodingIcon";
+import KiloCodeIcon from "../resources/KiloCodeIcon";
 
 export enum LanguageTags {
     Java="Java",
@@ -34,6 +37,7 @@ export enum LanguageTags {
     TypeScript="Type Script",
     Matlab="Matlab",
     R="R",
+    Kotlin="Kotlin",
 }
 
 export enum FrameworkTags {
@@ -44,6 +48,7 @@ export enum FrameworkTags {
     MUI="Material-ui",
     Spring="Spring",
     ReactNative="React Native",
+    VibeCoding="Vibe Coding",
 }
 
 export enum ToolsTags {
@@ -57,6 +62,7 @@ export enum ToolsTags {
     MongoDb="MongoDb",
     Portainer="Portainer",
     Azure="Azure",
+    KiloCode="Kilo Code",
 }
 
 export const TagToIcon: {[key: string]: ReactElement} = {
@@ -68,6 +74,7 @@ export const TagToIcon: {[key: string]: ReactElement} = {
     [LanguageTags.TypeScript]: <TypescriptIcon/>,
     [LanguageTags.Matlab]: <MatlabIcon/>,
     [LanguageTags.R]: <RIcon/>,
+    [LanguageTags.Kotlin]: <KotlinIcon/>,
     [FrameworkTags.React]: <ReactIcon/>,
     [FrameworkTags.Django]: <DjangoIcon/>,
     [FrameworkTags.Bootstrap]: <BootstrapIcon/>,
@@ -75,6 +82,7 @@ export const TagToIcon: {[key: string]: ReactElement} = {
     [FrameworkTags.MUI]: <MaterialUiIcon/>,
     [FrameworkTags.Spring]: <SpringIcon/>,
     [FrameworkTags.ReactNative]: <ReactNativeIcon/>,
+    [FrameworkTags.VibeCoding]: <VibeCodingIcon/>,
     [ToolsTags.Linux]: <LinuxIcon/>,
     [ToolsTags.Docker]: <DockerIcon/>,
     [ToolsTags.MySQL]: <MySqlIcon/>,
@@ -84,5 +92,6 @@ export const TagToIcon: {[key: string]: ReactElement} = {
     [ToolsTags.Cloudflare]: <CloudflareIcon/>,
     [ToolsTags.MongoDb]: <MongoDbIcon/>,
     [ToolsTags.Portainer]: <PortainerIcon/>,
-    [ToolsTags.Azure]: <AzureIcon/>
+    [ToolsTags.Azure]: <AzureIcon/>,
+    [ToolsTags.KiloCode]: <KiloCodeIcon/>
 }

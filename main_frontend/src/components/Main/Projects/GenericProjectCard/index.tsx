@@ -57,7 +57,7 @@ const GenericProjectCard = (props: IGenericProjectCardProps) => {
                 </Typography>
                 <Grid justifyContent={"space-evenly"} alignItems={"center"} container spacing={isSmallScreen ? 0.25 : 0.35} py={isSmallScreen ? 0.25 : 0.35}>
                     {
-                        project.tags.map(
+                        [...project.tags].sort((a, b) => (MyCombinedRatings[b] || 0) - (MyCombinedRatings[a] || 0)).map(
                             (e) => (
                                 MyCombinedRatings[e] ?
                                 <Grid key={e} item>

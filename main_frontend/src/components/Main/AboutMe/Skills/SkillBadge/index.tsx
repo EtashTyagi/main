@@ -20,6 +20,8 @@ import {
     SILVER_ELEVATION,
     SILVER_THRESHOLD
 } from "../../../../../constants/MyRatings";
+import {useNavigate} from "react-router-dom";
+import {PROJECTS_ROUTE} from "../../../../../constants/routes";
 
 export interface ISkillBadgeProps extends CardProps {
     title: string,
@@ -32,6 +34,7 @@ const SkillBadge = (props: ISkillBadgeProps) => {
     const { title, ...cardProps} = props
     const rating = MyCombinedRatings[title]
     const icon = TagToIcon[title]
+    const navigate = useNavigate()
     const colorVariant = rating >= GOLD_THRESHOLD ? "gold"
         : rating >= SILVER_THRESHOLD ? "silver"
             : rating >= BRONZE_THRESHOLD ? "bronze" : undefined
@@ -63,7 +66,7 @@ const SkillBadge = (props: ISkillBadgeProps) => {
                 <Typography variant={"subtitle1"}>{title}</Typography>
                 <Divider/>
                 <Typography variant={"caption"} mt={1}>Rating: {rating/5*100}%</Typography>
-                <Button size={"small"}>{title} Projects</Button>
+                <Button size={"small"} onClick={() => navigate(`${PROJECTS_ROUTE}?tag=${encodeURIComponent(title)}`)}>{title} Projects</Button>
             </Stack>
         } enterTouchDelay={0} leaveTouchDelay={5000}>
             <StyledSkillBadgeWrapper {...cardProps}

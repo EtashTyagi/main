@@ -1,0 +1,11 @@
+- Full-stack e-commerce platform built as a group project for the Foundation of Computer Security course at IIITD.
+- Multi-role authentication system with separate portals for buyers, sellers, and administrators, each with distinct permissions and dashboards.
+- Integrated Stripe payment gateway for secure credit card transactions with webhook-based payment verification.
+- Real-time inventory management system that tracks product stock levels and prevents overselling.
+- Admin approval workflow for seller registration to maintain marketplace quality and prevent fraud.
+- Order tracking system with email notifications for order confirmation, shipping updates, and delivery status.
+- Product catalog with search, filtering, and category-based browsing.
+- Containerized deployment using Docker with Nginx reverse proxy for production serving.
+- MySQL database with optimized queries for product listings and transaction history.
+- Deployed on my local server [here](https://shop.etashtyagi.in).
+- Source Code [here](https://github.com/EtashTyagi/fcs_ecommerce).

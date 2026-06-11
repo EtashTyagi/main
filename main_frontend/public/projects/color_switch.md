@@ -1,0 +1,8 @@
+- Desktop game clone of the popular mobile game Color Switch, built entirely in JavaFX without any external gaming libraries.
+- Custom physics engine with geometric collision detection between the ball and rotating obstacles.
+- Smooth animations using JavaFX Timeline and AnimationTimer for 60fps gameplay.
+- Features include custom color themes, local leaderboard system with persistent high scores, and user authentication (login/signup).
+- Multiple game modes with increasing difficulty levels and obstacle patterns.
+- Score tracking system with visual feedback and game-over screens.
+- Completed as an Advanced Programming course project at IIITD in a team of 2, with 83 commits.
+- Source Code [here](https://github.com/EtashTyagi/Color-Switch-Game).

@@ -1,0 +1,8 @@
+- Full-stack personal portfolio website structured as a monorepo with independent frontend and backend sub-projects.
+- Frontend is a React 17 SPA with TypeScript, MUI v5, Redux Toolkit, and react-router-dom v6 — featuring a scroll-snap About page, project gallery, skills carousel, and life-events timeline.
+- Backend is a Spring Boot REST API with MongoDB, providing a like-counter endpoint (session-deduplicated) and a message stub.
+- Frontend hosted on Cloudflare Pages for global CDN distribution with automatic HTTPS.
+- Backend containerized with Docker and self-hosted, managed through Portainer for easy deployment and monitoring.
+- Dark/light theme toggle with localStorage persistence and responsive design for all screen sizes.
+- Server has scheduled downtime from 12am to 8am IST everyday to conserve resources.
+- Source Code [here](https://github.com/EtashTyagi/main).

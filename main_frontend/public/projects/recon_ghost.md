@@ -1,0 +1,10 @@
+- Linux kernel module implementing a stateful firewall designed to detect and defeat network reconnaissance and port scanning attacks.
+- Written entirely in C as a loadable kernel module (LKM), interfacing directly with Netfilter hooks at the IP layer.
+- Detects multiple scanning techniques including TCP SYN scans, FIN scans, XMAS scans, NULL scans, UDP scans, and ACK scans used by tools like Nmap.
+- Maintains per-source-IP state tables to track connection patterns and identify suspicious packet sequences over time.
+- Configurable thresholds for scan detection, allowing tuning between sensitivity and false-positive rates.
+- Logs detected scan attempts with source IP, scan type, timestamp, and targeted ports via the kernel log buffer (dmesg/syslog).
+- Automatically drops packets from identified scanners and can blacklist offending IPs for a configurable duration.
+- Includes a Makefile for kernel module compilation and a test.sh script for automated scan simulation and verification.
+- Done as a Network and System Security-2 assignment at IIITD.
+- Source Code [here](https://github.com/EtashTyagi/recon_ghost).

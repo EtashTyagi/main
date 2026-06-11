@@ -14,6 +14,8 @@ import {
     TEXT_ON_GOLD,
     TEXT_ON_SILVER
 } from "../../themes/constants";
+import {useNavigate} from "react-router-dom";
+import {PROJECTS_ROUTE} from "../../constants/routes";
 
 export interface ISkillAndProjectTagChipProps extends ChipProps {
     tagName: LanguageTags | FrameworkTags | ToolsTags | string
@@ -21,6 +23,7 @@ export interface ISkillAndProjectTagChipProps extends ChipProps {
 
 const SkillAndProjectTagChip = (props: ISkillAndProjectTagChipProps) => {
     const theme = useTheme()
+    const navigate = useNavigate()
 
     const {tagName, ...chipProps} = props
     const rating = MyCombinedRatings[tagName] || 0
@@ -47,8 +50,13 @@ const SkillAndProjectTagChip = (props: ISkillAndProjectTagChipProps) => {
 
     return (
         <Chip {...chipProps} label={tagName}
+            onClick={(e) => {
+                e.stopPropagation()
+                navigate(`${PROJECTS_ROUTE}?tag=${encodeURIComponent(tagName)}`)
+            }}
             icon={React.cloneElement(TagToIcon[tagName] || <></>, {style: {color: color}})} sx={{...chipProps.sx, paddingLeft: 1.5, paddingRight: 3, paddingTop: 1, paddingBottom: 1,
             background: background, color: color, borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+            cursor: 'pointer',
             transition: 'all 0.3s ease-in-out',
             '&:hover': {
                 transform: 'scale(1.08) rotate(-1deg)',

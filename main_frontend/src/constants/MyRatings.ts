@@ -9,6 +9,7 @@ export const MyLanguageRatings: {[key: string]: number} = {
     [LanguageTags.TypeScript]: 3.5,
     [LanguageTags.Matlab]: 2,
     [LanguageTags.R]: 1.5,
+    [LanguageTags.Kotlin]: 1,
 }
 
 export const MyFrameworkRatings: {[key: string]: number} = {
@@ -19,6 +20,7 @@ export const MyFrameworkRatings: {[key: string]: number} = {
     [FrameworkTags.Bootstrap]: 3.5,
     [FrameworkTags.Spring]: 3.25,
     [FrameworkTags.ReactNative]: 2,
+    [FrameworkTags.VibeCoding]: 5,
 }
 
 export const MyToolRatings: {[key: string]: number} = {
@@ -31,7 +33,8 @@ export const MyToolRatings: {[key: string]: number} = {
     [ToolsTags.Cloudflare]: 3.25,
     [ToolsTags.MongoDb]: 3,
     [ToolsTags.Portainer]: 3,
-    [ToolsTags.Azure]: 2
+    [ToolsTags.Azure]: 2,
+    [ToolsTags.KiloCode]: 5
 }
 
 export const MyCombinedRatings = {...MyLanguageRatings, ...MyToolRatings, ...MyFrameworkRatings}

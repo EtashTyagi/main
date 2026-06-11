@@ -30,7 +30,7 @@ const FallingLeaves = () => {
                 height: '100vh',
                 overflow: 'hidden',
                 pointerEvents: 'none',
-                zIndex: 9998,
+                zIndex: -1,
             }}
         >
             {leaves.map((leaf) => (
