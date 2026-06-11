@@ -26,7 +26,7 @@ config beyond CRA defaults. TypeScript `strict: true` is the main safety net.
 
 ## 2. Commands
 
-Frontend (run inside `main_frontend/`, Node >= 16.17, npm):
+Frontend (run inside `main_frontend/`, Node >= 18, npm):
 
 ```bash
 npm install        # install deps
