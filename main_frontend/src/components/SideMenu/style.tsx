@@ -10,9 +10,9 @@ const openedStyle = (theme: Theme): CSSObject => ({
     }),
     overflowX: 'hidden',
     width: SIDEBAR_WIDTH,
-    borderRadius: '0 40px 40px 0',
+    borderRadius: '0 0 40px 0',
     [smallScreen(theme)]: {
-        borderRadius: '0 40px 40px 0',
+        borderRadius: '0 0 40px 0',
     }
 });
 
@@ -23,9 +23,9 @@ const closedStyle = (theme: Theme): CSSObject => ({
     }),
     overflowX: 'hidden',
     width: SIDEBAR_WIDTH,
-    borderRadius: '0 40px 40px 0',
+    borderRadius: '0 0 40px 0',
     [smallScreen(theme)]: {
-        borderRadius: '0 40px 40px 0',
+        borderRadius: '0 0 40px 0',
     }
 });
 
@@ -38,7 +38,7 @@ const StyledDrawer = styled(SwipeableDrawer)(
         '& .MuiDrawer-paper': {
             background: APP_DRAWER_COLOR[theme.palette.mode === 'dark' ? AppThemes.DARK : AppThemes.LIGHT],
             backdropFilter: 'blur(12px)',
-            borderRadius: '0 40px 40px 0',
+            borderRadius: '0 0 40px 0',
             boxShadow: '4px 0 24px rgba(74, 124, 89, 0.08)'
         },
         ...(open && {
